@@ -1,5 +1,5 @@
 {
-  "name": "ng-sidebar9plus",
+  "name": "@igorkmkd/ng-sidebar9plus",
   "version": "12.0.0",
   "description": "Angular sidebar component 9+. Forked from https://github.com/arkon/ng-sidebar.",
   "repository": {
@@ -29,6 +29,7 @@
   "jsnext:main": "./lib_esmodule/index.js",
   "typings": "./lib_commonjs/index.d.ts",
   "scripts": {
+    "ng": "ng",
     "lint": "tslint --project tsconfig.json src/**/*.ts",
     "build:commonjs": "rimraf lib_commonjs && ngc -p tsconfig.json",
     "build:esmodule": "rimraf lib_esmodule && ngc -p tsconfig.module.json",
@@ -36,20 +37,21 @@
     "prepare": "npm run build"
   },
   "peerDependencies": {
-    "@angular/core": ">=9.0.0",
-    "@angular/common": ">=9.0.0"
+    "@angular/common": ">=13.0.0",
+    "@angular/core": ">=13.0.0"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^13.0.3",
-    "@angular/common": "^12.2.13",
-    "@angular/compiler": "^12.2.13",
-    "@angular/compiler-cli": "^12.2.13",
-    "@angular/core": "^12.2.13",
-    "@angular/platform-browser": "^12.2.13",
+    "@angular/cli": "^13.3.11",
+    "@angular/common": "^13.4.0",
+    "@angular/compiler": "^13.4.0",
+    "@angular/compiler-cli": "^13.4.0",
+    "@angular/core": "^13.4.0",
+    "@angular/platform-browser": "^13.4.0",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.5",
     "tslint": "^5.20.1",
-    "typescript": "~4.3.5",
+    "typescript": "4.6",
     "zone.js": "~0.11.4"
   }
 }
