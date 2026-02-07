@@ -9,6 +9,8 @@ const root = function (args) {
 };
 
 module.exports = {
+  mode: 'development',
+
   entry: [
     root('src/polyfills.ts'),
     root('src/bootstrap.ts')
