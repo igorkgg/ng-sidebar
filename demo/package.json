@@ -10,38 +10,38 @@
   "license": "MIT",
   "scripts": {
     "install-lib": "npm i -f ng-sidebar",
-    "start": "webpack-dev-server --progress --colors",
-    "build": "webpack -p --progress --colors",
+    "start": "webpack-dev-server --progress",
+    "build": "webpack -p --progress",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "engines": {
     "node": ">=10"
   },
   "dependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "es6-shim": "^0.35.5",
+    "@angular/common": "^13.3.12",
+    "@angular/compiler": "^13.3.12",
+    "@angular/core": "^13.3.12",
+    "@angular/platform-browser": "^13.3.12",
+    "@angular/platform-browser-dynamic": "^13.3.12",
     "ng-sidebar": "file:..",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.5.5",
-    "zone.js": "~0.9.1"
+    "rxjs": "^7.8.1",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.8"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^5.0.5",
-    "css-loader": "^3.5.3",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "gh-pages": "^2.2.0",
-    "html-webpack-plugin": "^4.2.0",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
-    "style-loader": "^1.2.0",
-    "ts-loader": "^6.2.1",
-    "typescript": "~3.4.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "@angular-devkit/build-angular": "^13.3.11",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.7.1",
+    "gh-pages": "^3.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.8",
+    "typescript": "~4.6.4",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
   }
 }

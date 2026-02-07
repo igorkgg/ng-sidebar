@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const root = function (args) {
@@ -33,19 +33,16 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                'sourceMap': true,
-                'importLoaders': 1
-              }
-            },
-            'sass-loader'
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -56,13 +53,19 @@ module.exports = {
       inject: true
     }),
 
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'css/[name].css'
     }),
 
-    new CopyWebpackPlugin([{
-      from: root('public')
-    }]),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: root('public'),
+        to: root('dist'),
+        globOptions: {
+          ignore: ['**/index.html']
+        }
+      }]
+    }),
 
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
@@ -71,7 +74,9 @@ module.exports = {
   ],
 
   devServer: {
-    contentBase: root('public'),
-    stats: { chunkModules: false },
+    static: {
+      directory: root('public')
+    },
+    port: 8080
   }
 };
