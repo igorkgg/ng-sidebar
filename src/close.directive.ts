@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, inject } from '@angular/core';
 
 import { Sidebar } from './sidebar.component';
 
@@ -9,7 +9,7 @@ import { Sidebar } from './sidebar.component';
   }
 })
 export class CloseSidebar {
-  constructor(private _sidebar: Sidebar) {}
+  private _sidebar = inject(Sidebar);
 
   /** @internal */
   _onClick(): void {
