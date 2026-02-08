@@ -10,12 +10,6 @@
   "bugs": {
     "url": "https://github.com/igorkgg/ng-sidebar/issues"
   },
-  "files": [
-    "lib_commonjs/*",
-    "lib_esmodule/*",
-    "README.md",
-    "LICENSE"
-  ],
   "author": "Eugene Cheung",
   "license": "MIT",
   "keywords": [
@@ -25,9 +19,6 @@
     "component"
   ],
   "main": "./lib_commonjs/index.js",
-  "module": "./lib_esmodule/index.js",
-  "jsnext:main": "./lib_esmodule/index.js",
-  "typings": "./lib_commonjs/index.d.ts",
   "scripts": {
     "ng": "ng",
     "build": "ng build",

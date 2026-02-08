@@ -16,7 +16,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=20"
   },
   "dependencies": {
     "@angular/common": "^17.3.12",
