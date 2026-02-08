@@ -151,7 +151,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
   constructor(
     @Optional() private _container: SidebarContainer,
     private _ref: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) platformId: Object) {
+    @Inject(PLATFORM_ID) platformId: object) {
     if (!this._container) {
       throw new Error(
         '<ng-sidebar> must be inside a <ng-sidebar-container>. ' +
@@ -358,7 +358,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
     // Hides sidebar off screen when closed
     if (!this.opened) {
       const transformDir: string = 'translate' + (this._isLeftOrRight ? 'X' : 'Y');
-      let translateAmt: string = `${this._isLeftOrTop ? '-' : ''}100%`;
+      const translateAmt: string = `${this._isLeftOrTop ? '-' : ''}100%`;
 
       transformStyle = `${transformDir}(${translateAmt})`;
 
@@ -496,7 +496,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
     // In a timeout so that things render first
     setTimeout(() => {
       if (this.opened && this.closeOnClickOutside && !this._onClickOutsideAttached) {
-        document.addEventListener(this._clickEvent, this._onClickOutside);
+        document.addEventListener(this._clickEvent as any, this._onClickOutside);
         this._onClickOutsideAttached = true;
       }
     });
@@ -522,7 +522,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
 
   private _destroyCloseClickListener(): void {
     if (this._onClickOutsideAttached) {
-      document.removeEventListener(this._clickEvent, this._onClickOutside);
+      document.removeEventListener(this._clickEvent as any, this._onClickOutside);
       this._onClickOutsideAttached = false;
     }
   }

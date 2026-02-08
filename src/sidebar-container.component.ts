@@ -91,7 +91,7 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
 
   constructor(
     private _ref: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) platformId: Object) {
+    @Inject(PLATFORM_ID) platformId: object) {
     this._isBrowser = isPlatformBrowser(platformId);
   }
 

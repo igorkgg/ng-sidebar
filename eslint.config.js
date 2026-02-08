@@ -39,6 +39,9 @@ module.exports = defineConfig([
       ],
       "@typescript-eslint/no-explicit-any": [
         "warn",
+      ],
+      "@angular-eslint/no-output-on-prefix": [
+        "warn",
       ]
     },
   },
