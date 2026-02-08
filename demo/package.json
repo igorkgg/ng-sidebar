@@ -9,6 +9,7 @@
   "author": "Eugene Cheung",
   "license": "MIT",
   "scripts": {
+    "ng": "ng",
     "install-lib": "npm i -f ng-sidebar",
     "start": "webpack-dev-server --progress",
     "build": "webpack --mode=production --progress",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.12",
+    "@angular/cli": "^17.3.12",
     "@types/node": "^16.18.126",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
