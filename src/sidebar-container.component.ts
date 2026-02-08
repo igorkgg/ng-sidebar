@@ -82,10 +82,10 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
   @Output() showBackdropChange = new EventEmitter<boolean>();
   @Output() onBackdropClicked = new EventEmitter<null>();
 
-  @Input() contentClass: string;
-  @Input() backdropClass: string;
+  @Input() contentClass?: string;
+  @Input() backdropClass?: string;
 
-  private _sidebars: Array<Sidebar> = [];
+  private _sidebars: Sidebar[] = [];
 
   private _isBrowser: boolean;
 

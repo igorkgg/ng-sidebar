@@ -96,13 +96,13 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
   @Input() position: 'start' | 'end' | 'left' | 'right' | 'top' | 'bottom' = 'start';
   @Input() animate: boolean = true;
 
-  @Input() autoCollapseHeight: number;
-  @Input() autoCollapseWidth: number;
+  @Input() autoCollapseHeight?: number;
+  @Input() autoCollapseWidth?: number;
   @Input() autoCollapseOnInit: boolean = true;
 
-  @Input() sidebarClass: string;
+  @Input() sidebarClass?: string;
 
-  @Input() ariaLabel: string;
+  @Input() ariaLabel?: string;
   @Input() trapFocus: boolean = false;
   @Input() autoFocus: boolean = true;
 
@@ -126,20 +126,20 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
   @Output() _onRerender: EventEmitter<null> = new EventEmitter<null>();
 
   /** @internal */
-  @ViewChild('sidebar', {static: false}) _elSidebar: ElementRef;
+  @ViewChild('sidebar', {static: false}) _elSidebar?: ElementRef;
 
   private _focusableElementsString: string = 'a[href], area[href], input:not([disabled]), select:not([disabled]),' +
     'textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex], [contenteditable]';
-  private _focusableElements: Array<HTMLElement>;
-  private _focusedBeforeOpen: HTMLElement;
+  private _focusableElements?: HTMLElement[];
+  private _focusedBeforeOpen?: HTMLElement;
 
   private _tabIndexAttr: string = '__tabindex__';
   private _tabIndexIndicatorAttr: string = '__ngsidebar-tabindex__';
 
-  private _wasCollapsed: boolean;
+  private _wasCollapsed?: boolean;
 
   // Delay initial animation (issues #59, #112)
-  private _shouldAnimate: boolean;
+  private _shouldAnimate?: boolean;
 
   private _clickEvent: string = 'click';
   private _onClickOutsideAttached: boolean = false;
@@ -291,7 +291,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
 
     setTimeout(() => {
       if (this.animate && !this._isModeSlide) {
-        this._elSidebar.nativeElement.addEventListener('transitionend', this._onTransitionEnd);
+        this._elSidebar?.nativeElement.addEventListener('transitionend', this._onTransitionEnd);
       } else {
         this._setFocused();
         this._initCloseListeners();
@@ -320,7 +320,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
 
     setTimeout(() => {
       if (this.animate && !this._isModeSlide) {
-        this._elSidebar.nativeElement.addEventListener('transitionend', this._onTransitionEnd);
+        this._elSidebar?.nativeElement.addEventListener('transitionend', this._onTransitionEnd);
       } else {
         this._setFocused();
         this._destroyCloseListeners();
@@ -382,7 +382,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
    * transition is completed.
    */
   _onTransitionEnd(e: TransitionEvent): void {
-    if (e.target === this._elSidebar.nativeElement && e.propertyName.endsWith('transform')) {
+    if (e.target === this._elSidebar?.nativeElement && e.propertyName.endsWith('transform')) {
       this._setFocused();
 
       if (this.opened) {
@@ -424,7 +424,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
    * Loops focus back to the start of the sidebar if set to do so.
    */
   private _onFocusTrap(e: FocusEvent): void {
-    if (this._shouldTrapFocus && !this._elSidebar.nativeElement.contains(e.target)) {
+    if (this._shouldTrapFocus && !this._elSidebar?.nativeElement?.contains(e.target)) {
       this._focusFirstItem();
     }
   }
@@ -435,8 +435,8 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
    */
   private _setFocused(): void {
     this._focusableElements = Array.from(
-      this._elSidebar.nativeElement.querySelectorAll(this._focusableElementsString)
-    ) as Array<HTMLElement>;
+      this._elSidebar?.nativeElement.querySelectorAll(this._focusableElementsString)
+    ) as HTMLElement[];
 
     if (this.opened) {
       this._focusedBeforeOpen = document.activeElement as HTMLElement;
@@ -476,7 +476,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
       // Set focus back to element before the sidebar was opened
       if (this._focusedBeforeOpen && this.autoFocus && this._isModeOver) {
         this._focusedBeforeOpen.focus();
-        this._focusedBeforeOpen = null;
+        this._focusedBeforeOpen = undefined;
       }
     }
   }
@@ -618,7 +618,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
    * @return {number} Height of sidebar.
    */
   get _height(): number {
-    if (this._elSidebar.nativeElement) {
+    if (this._elSidebar?.nativeElement) {
       return this._isDocked ? this._dockedSize : this._elSidebar.nativeElement.offsetHeight;
     }
 
@@ -634,8 +634,8 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
    * @return {number} Width of sidebar.
    */
   get _width(): number {
-    if (this._elSidebar.nativeElement) {
-      return this._isDocked ? this._dockedSize : this._elSidebar.nativeElement.offsetWidth;
+    if (this._elSidebar?.nativeElement) {
+      return this._isDocked ? this._dockedSize : this._elSidebar?.nativeElement?.offsetWidth;
     }
 
     return 0;
@@ -693,7 +693,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
    * @return {boolean} Sidebar is docked.
    */
   get _isDocked(): boolean {
-    return this.dock && this.dockedSize && !this.opened;
+    return (this.dock && this.dockedSize && !this.opened) as boolean;
   }
 
   /**
