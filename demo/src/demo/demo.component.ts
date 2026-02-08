@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { SidebarModule } from 'ng-sidebar';
 
 @Component({
   selector: 'demo',
+  imports: [SidebarModule],
+  standalone: true,
   template: `
     <ng-sidebar-container
         (onBackdropClicked)="_onBackdropClicked()">
@@ -102,7 +105,7 @@ import { Component } from '@angular/core';
         </section>
       </div>
     </ng-sidebar-container>
-  `
+  `,
 })
 export class DemoComponent {
   public _opened = false;

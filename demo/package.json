@@ -11,8 +11,8 @@
   "scripts": {
     "ng": "ng",
     "install-lib": "npm i -f ng-sidebar",
-    "start": "webpack-dev-server --progress",
-    "build": "webpack --mode=production --progress",
+    "start": "ng serve",
+    "build": "ng build --prod",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "engines": {

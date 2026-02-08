@@ -13,6 +13,9 @@
       "dom"
     ]
   },
+  "files": [
+    "src/main.ts",
+  ],
   "include": [
     "src/**/*"
   ],
