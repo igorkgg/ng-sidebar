@@ -78,10 +78,10 @@ import { Sidebar } from './sidebar.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy {
-  @Input() animate: boolean = true;
+  @Input() animate = true;
 
-  @Input() allowSidebarBackdropControl: boolean = true;
-  @Input() showBackdrop: boolean = false;
+  @Input() allowSidebarBackdropControl = true;
+  @Input() showBackdrop = false;
   @Output() showBackdropChange = new EventEmitter<boolean>();
   @Output() onBackdropClicked = new EventEmitter<null>();
 
@@ -163,16 +163,16 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
       top = 0,
       bottom = 0;
 
-    let transformStyle: string = '';
-    let heightStyle: string = '';
-    let widthStyle: string = '';
+    let transformStyle = '';
+    let heightStyle = '';
+    let widthStyle = '';
 
     for (const sidebar of this._sidebars) {
       // Slide mode: we need to translate the entire container
       if (sidebar._isModeSlide) {
         if (sidebar.opened) {
           const transformDir: string = sidebar._isLeftOrRight ? 'X' : 'Y';
-          const transformAmt: string =
+          const transformAmt =
             `${sidebar._isLeftOrTop ? '' : '-'}${sidebar._isLeftOrRight ? sidebar._width : sidebar._height}`;
 
           transformStyle = `translate${transformDir}(${transformAmt}px)`;
@@ -181,7 +181,7 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
 
       // Create a space for the sidebar
       if ((sidebar._isModePush && sidebar.opened) || sidebar.dock) {
-        let paddingAmt: number = 0;
+        let paddingAmt = 0;
 
         if (sidebar._isModeSlide && sidebar.opened) {
           if (sidebar._isLeftOrRight) {

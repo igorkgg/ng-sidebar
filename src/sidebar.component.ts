@@ -87,31 +87,31 @@ import { isLTR, isIOS } from './utils';
 })
 export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
   // `openedChange` allows for "2-way" data binding
-  @Input() opened: boolean = false;
+  @Input() opened = false;
   @Output() openedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input() mode: 'over' | 'push' | 'slide' = 'over';
-  @Input() dock: boolean = false;
-  @Input() dockedSize: string = '0px';
+  @Input() dock = false;
+  @Input() dockedSize = '0px';
   @Input() position: 'start' | 'end' | 'left' | 'right' | 'top' | 'bottom' = 'start';
-  @Input() animate: boolean = true;
+  @Input() animate = true;
 
   @Input() autoCollapseHeight?: number;
   @Input() autoCollapseWidth?: number;
-  @Input() autoCollapseOnInit: boolean = true;
+  @Input() autoCollapseOnInit = true;
 
   @Input() sidebarClass?: string;
 
   @Input() ariaLabel?: string;
-  @Input() trapFocus: boolean = false;
-  @Input() autoFocus: boolean = true;
+  @Input() trapFocus = false;
+  @Input() autoFocus = true;
 
-  @Input() showBackdrop: boolean = false;
-  @Input() closeOnClickBackdrop: boolean = false;
-  @Input() closeOnClickOutside: boolean = false;
+  @Input() showBackdrop = false;
+  @Input() closeOnClickBackdrop = false;
+  @Input() closeOnClickOutside = false;
 
-  @Input() keyClose: boolean = false;
-  @Input() keyCode: number = 27; // Default to ESC key
+  @Input() keyClose = false;
+  @Input() keyCode = 27; // Default to ESC key
 
   @Output() onContentInit: EventEmitter<null> = new EventEmitter<null>();
   @Output() onOpenStart: EventEmitter<null> = new EventEmitter<null>();
@@ -133,18 +133,18 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
   private _focusableElements?: HTMLElement[];
   private _focusedBeforeOpen?: HTMLElement;
 
-  private _tabIndexAttr: string = '__tabindex__';
-  private _tabIndexIndicatorAttr: string = '__ngsidebar-tabindex__';
+  private _tabIndexAttr = '__tabindex__';
+  private _tabIndexIndicatorAttr = '__ngsidebar-tabindex__';
 
   private _wasCollapsed?: boolean;
 
   // Delay initial animation (issues #59, #112)
   private _shouldAnimate?: boolean;
 
-  private _clickEvent: string = 'click';
-  private _onClickOutsideAttached: boolean = false;
-  private _onKeyDownAttached: boolean = false;
-  private _onResizeAttached: boolean = false;
+  private _clickEvent = 'click';
+  private _onClickOutsideAttached = false;
+  private _onKeyDownAttached = false;
+  private _onResizeAttached = false;
 
   private _isBrowser: boolean;
 
@@ -353,12 +353,12 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
    * @return {CSSStyleDeclaration} The transform styles, with the WebKit-prefixed version as well.
    */
   _getStyle(): CSSStyleDeclaration {
-    let transformStyle: string = '';
+    let transformStyle = '';
 
     // Hides sidebar off screen when closed
     if (!this.opened) {
       const transformDir: string = 'translate' + (this._isLeftOrRight ? 'X' : 'Y');
-      const translateAmt: string = `${this._isLeftOrTop ? '-' : ''}100%`;
+      const translateAmt = `${this._isLeftOrTop ? '-' : ''}100%`;
 
       transformStyle = `${transformDir}(${translateAmt})`;
 

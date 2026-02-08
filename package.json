@@ -34,7 +34,8 @@
     "build:esmodule": "rimraf lib_esmodule && ngc -p tsconfig.module.json",
     "build": "npm run build:commonjs && npm run build:esmodule",
     "prepare": "npm run lint && npm run build",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix"
   },
   "peerDependencies": {
     "@angular/common": ">=17.0.0",

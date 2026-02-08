@@ -4,7 +4,7 @@
  * @return {boolean} Page's language direction is left-to-right.
  */
 export function isLTR(): boolean {
-  let dir: string = 'ltr';
+  let dir = 'ltr';
 
   if (typeof window !== 'undefined') {
     if (window.getComputedStyle) {
