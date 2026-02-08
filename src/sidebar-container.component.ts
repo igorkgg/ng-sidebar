@@ -20,11 +20,14 @@ import { Sidebar } from './sidebar.component';
 @Component({
   selector: 'ng-sidebar-container',
   template: `
-    <div *ngIf="showBackdrop"
-      aria-hidden="true"
-      class="ng-sidebar__backdrop"
-      [ngClass]="backdropClass"
-      (click)="_onBackdropClicked()"></div>
+     @if(showBackdrop) {
+       <div
+         aria-hidden="true"
+         class="ng-sidebar__backdrop"
+         [ngClass]="backdropClass"
+         (click)="_onBackdropClicked()">
+       </div>
+     }
 
     <ng-content select="ng-sidebar,[ng-sidebar]"></ng-content>
 
