@@ -25,7 +25,7 @@
     "@angular/platform-browser": "^17.3.12",
     "@angular/platform-browser-dynamic": "^17.3.12",
     "es6-shim": "^0.35.8",
-    "ng-sidebar": "file:..",
+    "ng-sidebar": "file:../dist",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "tslib": "^2.3.0",

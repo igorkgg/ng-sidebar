@@ -12,8 +12,6 @@ import { CloseSidebar } from './close.directive';
 })
 export class SidebarModule {
   static forRoot(): ModuleWithProviders<SidebarModule> {
-    return {
-      ngModule: SidebarModule
-    };
+    return { ngModule: SidebarModule };
   }
 }
