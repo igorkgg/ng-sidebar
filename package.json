@@ -1,6 +1,6 @@
 {
   "name": "ng-sidebar9plus",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "description": "Angular sidebar component 9+. Forked from https://github.com/arkon/ng-sidebar.",
   "repository": {
     "type": "git",
@@ -52,6 +52,6 @@
     "rxjs": "^7.8.1",
     "tslint": "^5.20.1",
     "typescript": "4.8",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.12.0"
   }
 }
