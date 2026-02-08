@@ -19,3 +19,4 @@ lib_esmodule/
 demo/dist
 
 .angular/
+dist/

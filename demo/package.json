@@ -12,7 +12,7 @@
     "ng": "ng",
     "install-lib": "npm i -f ng-sidebar",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --configuration production",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "engines": {

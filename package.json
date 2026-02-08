@@ -30,9 +30,7 @@
   "typings": "./lib_commonjs/index.d.ts",
   "scripts": {
     "ng": "ng",
-    "build:commonjs": "rimraf lib_commonjs && ngc -p tsconfig.json",
-    "build:esmodule": "rimraf lib_esmodule && ngc -p tsconfig.module.json",
-    "build": "npm run build:commonjs && npm run build:esmodule",
+    "build": "ng build",
     "prepare": "npm run lint && npm run build",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix"
@@ -42,6 +40,7 @@
     "@angular/core": ">=17.0.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.12",
     "@angular-devkit/schematics": "^17.3.17",
     "@angular/cli": "^17.3.17",
     "@angular/common": "^17.3.12",
@@ -51,6 +50,7 @@
     "@angular/platform-browser": "^17.3.12",
     "angular-eslint": "21.0.1",
     "eslint": "^9.39.1",
+    "ng-packagr": "^17.3.0",
     "rimraf": "^6.1.2",
     "rxjs": "^7.8.1",
     "typescript": "5.4.5",
