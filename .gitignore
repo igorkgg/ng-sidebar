@@ -17,3 +17,6 @@ lib_esmodule/
 
 # Built demo files
 demo/dist
+
+.angular/
+dist/

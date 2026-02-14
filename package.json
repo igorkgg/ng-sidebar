@@ -1,6 +1,6 @@
 {
   "name": "ng-sidebar9plus",
-  "version": "16.0.0",
+  "version": "17.0.0",
   "description": "Angular sidebar component 9+. Forked from https://github.com/arkon/ng-sidebar.",
   "repository": {
     "type": "git",
@@ -10,12 +10,6 @@
   "bugs": {
     "url": "https://github.com/igorkgg/ng-sidebar/issues"
   },
-  "files": [
-    "lib_commonjs/*",
-    "lib_esmodule/*",
-    "README.md",
-    "LICENSE"
-  ],
   "author": "Eugene Cheung",
   "license": "MIT",
   "keywords": [
@@ -24,34 +18,33 @@
     "sidebar",
     "component"
   ],
-  "main": "./lib_commonjs/index.js",
-  "module": "./lib_esmodule/index.js",
-  "jsnext:main": "./lib_esmodule/index.js",
-  "typings": "./lib_commonjs/index.d.ts",
   "scripts": {
     "ng": "ng",
-    "lint": "tslint --project tsconfig.json src/**/*.ts",
-    "build:commonjs": "rimraf lib_commonjs && ngc -p tsconfig.json",
-    "build:esmodule": "rimraf lib_esmodule && ngc -p tsconfig.module.json",
-    "build": "npm run lint && npm run build:commonjs && npm run build:esmodule",
-    "prepare": "npm run build"
+    "build": "ng build",
+    "prepare": "npm run lint && npm run build",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix"
   },
   "peerDependencies": {
-    "@angular/common": ">=16.0.0",
-    "@angular/core": ">=16.0.0"
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^16.0.0",
-    "@angular/cli": "^16.0.0",
-    "@angular/common": "^16.0.0",
-    "@angular/compiler": "^16.0.0",
-    "@angular/compiler-cli": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@angular/platform-browser": "^16.0.0",
-    "rimraf": "^3.0.2",
+    "@angular-devkit/build-angular": "^17.3.12",
+    "@angular-devkit/schematics": "^17.3.17",
+    "@angular/cli": "^17.3.17",
+    "@angular/common": "^17.3.12",
+    "@angular/compiler": "^17.3.12",
+    "@angular/compiler-cli": "^17.3.12",
+    "@angular/core": "^17.3.12",
+    "@angular/platform-browser": "^17.3.12",
+    "angular-eslint": "21.0.1",
+    "eslint": "^9.39.1",
+    "ng-packagr": "^17.3.0",
+    "rimraf": "^6.1.2",
     "rxjs": "^7.8.1",
-    "tslint": "^5.20.1",
-    "typescript": "5.1",
-    "zone.js": "~0.13.0"
+    "typescript": "5.4.5",
+    "typescript-eslint": "8.46.4",
+    "zone.js": "~0.14.10"
   }
 }

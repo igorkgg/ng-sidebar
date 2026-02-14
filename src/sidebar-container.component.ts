@@ -4,7 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
-  Inject,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
@@ -12,19 +12,24 @@ import {
   PLATFORM_ID,
   SimpleChanges
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 import { Sidebar } from './sidebar.component';
 
 // Based on https://github.com/angular/material2/tree/master/src/lib/sidenav
 @Component({
   selector: 'ng-sidebar-container',
+  standalone: true,
+  imports: [CommonModule],
   template: `
-    <div *ngIf="showBackdrop"
-      aria-hidden="true"
-      class="ng-sidebar__backdrop"
-      [ngClass]="backdropClass"
-      (click)="_onBackdropClicked()"></div>
+     @if(showBackdrop) {
+       <div
+         aria-hidden="true"
+         class="ng-sidebar__backdrop"
+         [ngClass]="backdropClass"
+         (click)="_onBackdropClicked()">
+       </div>
+     }
 
     <ng-content select="ng-sidebar,[ng-sidebar]"></ng-content>
 
@@ -75,25 +80,21 @@ import { Sidebar } from './sidebar.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy {
-  @Input() animate: boolean = true;
+  @Input() animate = true;
 
-  @Input() allowSidebarBackdropControl: boolean = true;
-  @Input() showBackdrop: boolean = false;
+  @Input() allowSidebarBackdropControl = true;
+  @Input() showBackdrop = false;
   @Output() showBackdropChange = new EventEmitter<boolean>();
   @Output() onBackdropClicked = new EventEmitter<null>();
 
-  @Input() contentClass: string;
-  @Input() backdropClass: string;
+  @Input() contentClass?: string;
+  @Input() backdropClass?: string;
 
-  private _sidebars: Array<Sidebar> = [];
+  private _sidebars: Sidebar[] = [];
 
-  private _isBrowser: boolean;
+  private _isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  constructor(
-    private _ref: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) platformId: Object) {
-    this._isBrowser = isPlatformBrowser(platformId);
-  }
+  private _ref = inject(ChangeDetectorRef);
 
   ngAfterContentInit(): void {
     if (!this._isBrowser) {
@@ -160,16 +161,16 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
       top = 0,
       bottom = 0;
 
-    let transformStyle: string = '';
-    let heightStyle: string = '';
-    let widthStyle: string = '';
+    let transformStyle = '';
+    let heightStyle = '';
+    let widthStyle = '';
 
     for (const sidebar of this._sidebars) {
       // Slide mode: we need to translate the entire container
       if (sidebar._isModeSlide) {
         if (sidebar.opened) {
           const transformDir: string = sidebar._isLeftOrRight ? 'X' : 'Y';
-          const transformAmt: string =
+          const transformAmt =
             `${sidebar._isLeftOrTop ? '' : '-'}${sidebar._isLeftOrRight ? sidebar._width : sidebar._height}`;
 
           transformStyle = `translate${transformDir}(${transformAmt}px)`;
@@ -178,7 +179,7 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
 
       // Create a space for the sidebar
       if ((sidebar._isModePush && sidebar.opened) || sidebar.dock) {
-        let paddingAmt: number = 0;
+        let paddingAmt = 0;
 
         if (sidebar._isModeSlide && sidebar.opened) {
           if (sidebar._isLeftOrRight) {
