@@ -19,11 +19,11 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@angular/common": "^19.2.18",
-    "@angular/compiler": "^19.2.18",
-    "@angular/core": "^19.2.18",
-    "@angular/platform-browser": "^19.2.18",
-    "@angular/platform-browser-dynamic": "^19.2.18",
+    "@angular/common": "^20.3.16",
+    "@angular/compiler": "^20.3.16",
+    "@angular/core": "^20.3.16",
+    "@angular/platform-browser": "^20.3.16",
+    "@angular/platform-browser-dynamic": "^20.3.16",
     "es6-shim": "^0.35.8",
     "ng-sidebar": "file:../dist",
     "reflect-metadata": "^0.2.2",
@@ -32,8 +32,8 @@
     "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.2.20",
-    "@angular/cli": "^19.2.20",
+    "@angular-devkit/build-angular": "^20.3.16",
+    "@angular/cli": "^20.3.16",
     "@types/node": "^16.18.126",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
