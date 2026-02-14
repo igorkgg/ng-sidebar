@@ -9,9 +9,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": true,
-    "paths": {
-      "@angular/*": ["./node_modules/@angular/*"]
-    },
     "lib": [
       "ES2022",
       "dom"
