@@ -1,6 +1,6 @@
 {
   "name": "ng-sidebar9plus",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "description": "Angular sidebar component 9+. Forked from https://github.com/arkon/ng-sidebar.",
   "repository": {
     "type": "git",
@@ -25,22 +25,19 @@
     "lint": "ng lint",
     "lint:fix": "ng lint --fix"
   },
-  "peerDependencies": {
-    "@angular/common": ">=17.0.0",
-    "@angular/core": ">=17.0.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.3.12",
-    "@angular-devkit/schematics": "^17.3.17",
-    "@angular/cli": "^17.3.17",
-    "@angular/common": "^17.3.12",
-    "@angular/compiler": "^17.3.12",
-    "@angular/compiler-cli": "^17.3.12",
-    "@angular/core": "^17.3.12",
-    "@angular/platform-browser": "^17.3.12",
+    "@angular-devkit/build-angular": "^18.2.21",
+    "@angular-devkit/schematics": "^18.2.21",
+    "@angular/cli": "^18.2.21",
+    "@angular/common": "^18.2.14",
+    "@angular/compiler": "^18.2.14",
+    "@angular/compiler-cli": "^18.2.14",
+    "@angular/core": "^18.2.14",
+    "@angular/platform-browser": "^18.2.14",
     "angular-eslint": "21.0.1",
     "eslint": "^9.39.1",
-    "ng-packagr": "^17.3.0",
+    "ng-packagr": "^18.2.1",
     "rimraf": "^6.1.2",
     "rxjs": "^7.8.1",
     "typescript": "5.4.5",

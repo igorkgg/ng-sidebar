@@ -19,11 +19,11 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@angular/common": "^17.3.12",
-    "@angular/compiler": "^17.3.12",
-    "@angular/core": "^17.3.12",
-    "@angular/platform-browser": "^17.3.12",
-    "@angular/platform-browser-dynamic": "^17.3.12",
+    "@angular/common": "^18.2.14",
+    "@angular/compiler": "^18.2.14",
+    "@angular/core": "^18.2.14",
+    "@angular/platform-browser": "^18.2.14",
+    "@angular/platform-browser-dynamic": "^18.2.14",
     "es6-shim": "^0.35.8",
     "ng-sidebar": "file:../dist",
     "reflect-metadata": "^0.2.2",
@@ -32,8 +32,8 @@
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.3.12",
-    "@angular/cli": "^17.3.12",
+    "@angular-devkit/build-angular": "^18.2.21",
+    "@angular/cli": "^18.2.21",
     "@types/node": "^16.18.126",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
@@ -44,7 +44,7 @@
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.8",
-    "typescript": "~5.2.2",
+    "typescript": "~5.5.4",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
