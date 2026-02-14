@@ -1,6 +1,6 @@
 {
   "name": "ng-sidebar9plus",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "description": "Angular sidebar component 9+. Forked from https://github.com/arkon/ng-sidebar.",
   "repository": {
     "type": "git",
@@ -27,21 +27,21 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.21",
-    "@angular-devkit/schematics": "^18.2.21",
-    "@angular/cli": "^18.2.21",
-    "@angular/common": "^18.2.14",
-    "@angular/compiler": "^18.2.14",
-    "@angular/compiler-cli": "^18.2.14",
-    "@angular/core": "^18.2.14",
-    "@angular/platform-browser": "^18.2.14",
+    "@angular-devkit/schematics": "^19.2.20",
+    "@angular/build": "^19.2.20",
+    "@angular/cli": "^19.2.20",
+    "@angular/common": "^19.2.18",
+    "@angular/compiler": "^19.2.18",
+    "@angular/compiler-cli": "^19.2.18",
+    "@angular/core": "^19.2.18",
+    "@angular/platform-browser": "^19.2.18",
     "angular-eslint": "21.0.1",
     "eslint": "^9.39.1",
-    "ng-packagr": "^18.2.1",
+    "ng-packagr": "^19.2.2",
     "rimraf": "^6.1.2",
     "rxjs": "^7.8.1",
-    "typescript": "5.4.5",
+    "typescript": "5.8.3",
     "typescript-eslint": "8.46.4",
-    "zone.js": "~0.14.10"
+    "zone.js": "~0.15.1"
   }
 }
