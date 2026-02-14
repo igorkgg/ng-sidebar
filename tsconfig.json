@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "ES2022",
     "moduleResolution": "node",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
@@ -9,9 +9,8 @@
     "experimentalDecorators": true,
     "declaration": true,
     "removeComments": true,
-    "outDir": "lib_commonjs/",
     "rootDir": "src",
-    "lib": ["dom", "es5", "es2015.core", "es2015.collection", "es2015.iterable", "es2015.promise"]
+    "lib": ["dom", "es2022"]
   },
   "include": [
     "src/**/*"

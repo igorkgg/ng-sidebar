@@ -5,12 +5,11 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  Inject,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
-  Optional,
   Output,
   PLATFORM_ID,
   SimpleChanges,
@@ -148,20 +147,19 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
   private _onKeyDownAttached = false;
   private _onResizeAttached = false;
 
-  private _isBrowser: boolean;
+  private _isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  constructor(
-    @Optional() private _container: SidebarContainer,
-    private _ref: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) platformId: object) {
+  private _container = inject(SidebarContainer, { optional: true, skipSelf: true });
+
+  private _ref = inject(ChangeDetectorRef);
+
+  constructor() {
     if (!this._container) {
       throw new Error(
         '<ng-sidebar> must be inside a <ng-sidebar-container>. ' +
         'See https://github.com/arkon/ng-sidebar#usage for more info.'
       );
     }
-
-    this._isBrowser = isPlatformBrowser(platformId);
 
     // Handle taps in iOS
     if (this._isBrowser && isIOS() && !('onclick' in window)) {
@@ -189,7 +187,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
       this.animate = false;
     }
 
-    this._container._addSidebar(this);
+    this._container?._addSidebar(this);
 
     if (this.autoCollapseOnInit) {
       this._collapse();
@@ -270,7 +268,7 @@ export class Sidebar implements AfterContentInit, OnInit, OnChanges, OnDestroy {
     this._destroyCloseListeners();
     this._destroyCollapseListeners();
 
-    this._container._removeSidebar(this);
+    this._container?._removeSidebar(this);
   }
 
   // Sidebar toggling

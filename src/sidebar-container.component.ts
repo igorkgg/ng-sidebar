@@ -4,7 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
-  Inject,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
@@ -92,13 +92,9 @@ export class SidebarContainer implements AfterContentInit, OnChanges, OnDestroy 
 
   private _sidebars: Sidebar[] = [];
 
-  private _isBrowser: boolean;
+  private _isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  constructor(
-    private _ref: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) platformId: object) {
-    this._isBrowser = isPlatformBrowser(platformId);
-  }
+  private _ref = inject(ChangeDetectorRef);
 
   ngAfterContentInit(): void {
     if (!this._isBrowser) {

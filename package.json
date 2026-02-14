@@ -18,7 +18,6 @@
     "sidebar",
     "component"
   ],
-  "main": "./lib_commonjs/index.js",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
