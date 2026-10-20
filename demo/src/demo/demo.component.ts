@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SidebarModule } from 'ng-sidebar';
 
 @Component({
   selector: 'demo',
   imports: [SidebarModule],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <ng-sidebar-container
         (onBackdropClicked)="_onBackdropClicked()">
