@@ -1,6 +1,6 @@
 {
   "name": "ng-sidebar9plus",
-  "version": "21.0.1",
+  "version": "22.0.0",
   "description": "Angular sidebar component 9+. Forked from https://github.com/arkon/ng-sidebar.",
   "repository": {
     "type": "git",
@@ -28,28 +28,28 @@
     "prepublishOnly": "echo 'Publish the build: npm run build && npm publish ./dist' && exit 1"
   },
   "peerDependencies": {
-    "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0"
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^21.1.4",
-    "@angular/build": "^21.1.4",
-    "@angular/cli": "^21.1.4",
-    "@angular/common": "^21.1.4",
-    "@angular/compiler": "^21.1.4",
-    "@angular/compiler-cli": "^21.1.4",
-    "@angular/core": "^21.1.4",
-    "@angular/platform-browser": "^21.1.4",
-    "angular-eslint": "21.1.0",
+    "@angular-devkit/schematics": "^22.2.3",
+    "@angular/build": "^22.2.3",
+    "@angular/cli": "^22.2.3",
+    "@angular/common": "^22.2.3",
+    "@angular/compiler": "^22.2.3",
+    "@angular/compiler-cli": "^22.2.3",
+    "@angular/core": "^22.2.3",
+    "@angular/platform-browser": "^22.2.3",
+    "angular-eslint": "22.6.0",
     "eslint": "^9.39.1",
-    "ng-packagr": "^21.1.0",
+    "ng-packagr": "^22.2.4",
     "rimraf": "^6.1.2",
     "rxjs": "^7.8.1",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "8.46.4",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "8.72.0",
     "zone.js": "~0.16.0"
   }
 }
