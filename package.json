@@ -1,6 +1,6 @@
 {
   "name": "ng-sidebar9plus",
-  "version": "20.0.0",
+  "version": "20.0.1",
   "description": "Angular sidebar component 9+. Forked from https://github.com/arkon/ng-sidebar.",
   "repository": {
     "type": "git",
@@ -18,14 +18,22 @@
     "sidebar",
     "component"
   ],
+  "sideEffects": false,
   "scripts": {
     "ng": "ng",
     "build": "ng build",
     "prepare": "npm run lint && npm run build",
     "lint": "ng lint",
-    "lint:fix": "ng lint --fix"
+    "lint:fix": "ng lint --fix",
+    "prepublishOnly": "echo 'Publish the build: npm run build && npm publish dist' && exit 1"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
   "devDependencies": {
     "@angular-devkit/schematics": "^20.3.16",
     "@angular/build": "^20.3.16",
